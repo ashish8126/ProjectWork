@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Yuvayana Test Series</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="err_msg_name">Enter Username</string>
+</resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/loginBackground"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="series.test.yuvayana.com.yuvayanatestseries.Activities.LoginActivity"
+    tools:showIn="@layout/activity_login">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Sign In"
+            android:layout_marginTop="30dp"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="Welcome!"
+            android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Log into your Account"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_name"
+                android:layout_marginTop="20dp"
+                android:theme="@style/TextLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_userName"
+                    android:textColor="#FFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter UserName / Email" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_pass"
+                android:layout_marginTop="20dp"
+                android:theme="@style/TextLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_pass"
+                    android:inputType="textPassword"
+                    android:textColor="#FFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Password" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:onClick="login"
+                android:text="Log in"
+                android:textColor="#FFF"
+                android:background="#56a4c2"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="Sign in with Facebook"
+                android:layout_marginTop="60dp"
+                android:textColor="#FFF"
+                android:textAllCaps="false"
+                android:background="#3C66C4"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="Sign in with Google +"
+                android:layout_marginTop="20dp"
+                android:textColor="#FFF"
+                android:textAllCaps="false"
+                android:background="#CF4332"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Forget your Password?"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textAlignment="textEnd"
+                    android:layout_weight="1"
+                    android:onClick="gotoSignUp"
+                    android:text="New User? Sign Up"
+                    android:textColor="#FFF" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
