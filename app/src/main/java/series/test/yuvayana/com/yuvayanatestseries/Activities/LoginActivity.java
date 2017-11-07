@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
      * Commit Again
      * */
     public TextInputLayout inputLayoutName, inputLayoutPass; // Check For Commit
-    public EditText userName, password;
+    public EditText userName, password,Ashish;
 
 
     @Override
