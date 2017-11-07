@@ -18,7 +18,7 @@ import series.test.yuvayana.com.yuvayanatestseries.R;
 public class LoginActivity extends AppCompatActivity {
 
 
-    public TextInputLayout inputLayoutName, inputLayoutPass;
+    public TextInputLayout inputLayoutName, inputLayoutPass; // Check For Commit
     public EditText userName, password;
 
     @Override
