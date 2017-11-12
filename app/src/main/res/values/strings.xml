@@ -4,5 +4,11 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_up">Sign Up</string>
     <string name="err_msg_name">Enter Username</string>
+    <string name="err_valid_name">Enter Valid Username</string>
+    <string name="err_msg_email">Enter Email</string>
+    <string name="err_valid_email">Enter Valid Email</string>
     <string name="err_msg_pass">Enter Password</string>
+    <string name="err_conf_pass">Enter Confirm Password</string>
+    <string name="err_conf_pass_match">Confirm Password does not match</string>
+    <string name="err_valid_pass">Enter Valid Password</string>
 </resources>
