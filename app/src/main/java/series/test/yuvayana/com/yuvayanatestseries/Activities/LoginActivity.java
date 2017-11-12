@@ -1,9 +1,11 @@
 package series.test.yuvayana.com.yuvayanatestseries.Activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -35,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         userName = (EditText) findViewById(R.id.input_userName);
         password = (EditText) findViewById(R.id.input_pass);
 
-
         userName.addTextChangedListener(new MyTextWatcher(userName));
         password.addTextChangedListener(new MyTextWatcher(password));
 
@@ -49,6 +50,11 @@ public class LoginActivity extends AppCompatActivity {
         if (userName.getText().toString().trim().isEmpty()) {
             inputLayoutName.setErrorEnabled(true);
             inputLayoutName.setError(getString(R.string.err_msg_name));
+            requestFocus(userName);
+            return false;
+        } else if (userName.getText().toString().length() <= 5) {
+            inputLayoutName.setErrorEnabled(true);
+            inputLayoutName.setError(getString(R.string.err_valid_name));
             requestFocus(userName);
             return false;
         } else {
@@ -69,11 +75,33 @@ public class LoginActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }  else if (password.getText().toString().length() <= 5) {
+            try {
+                inputLayoutPass.setErrorEnabled(true);
+                inputLayoutPass.setError(getString(R.string.err_valid_pass));
+                requestFocus(password);
+                return false;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             inputLayoutPass.setErrorEnabled(false);
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setNegativeButton("No", null)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        LoginActivity.this.finish();
+                    }
+                }).show();
     }
 
     public void login(View c) {
