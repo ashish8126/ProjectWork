@@ -11,4 +11,8 @@
     <string name="err_conf_pass">Enter Confirm Password</string>
     <string name="err_conf_pass_match">Confirm Password does not match</string>
     <string name="err_valid_pass">Enter Valid Password</string>
+    <string name="facebook_app_id">731245807086555</string>
+    <string name="fb_login_protocol_scheme">fb731245807086555</string>
+    <string name="sample_deep_link_url">https://plus.google.com/u/0/+Yuvayana/about </string>
+    <string name="sample_deep_link_id">https://plus.google.com/u/0/+Yuvayana/about </string>
 </resources>
