@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -94,6 +95,7 @@
 
 
             <Button
+                android:id="@+id/loginbutton"
                 android:layout_width="match_parent"
                 android:layout_marginTop="30dp"
                 android:onClick="login"
@@ -102,16 +104,20 @@
                 android:background="#56a4c2"
                 android:layout_height="wrap_content" />
 
-            <Button
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fbbutton"
                 android:layout_width="match_parent"
                 android:text="Sign in with Facebook"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:textColor="#FFF"
+                android:textSize="20sp"
                 android:textAllCaps="false"
                 android:background="#3C66C4"
                 android:layout_height="wrap_content" />
 
-            <Button
+            <com.google.android.gms.common.SignInButton
+                xmlns:plus="http://schemas.android.com/apk/lib/com.google.android.gms.plus"
+                android:id="@+id/signinbutton"
                 android:layout_width="match_parent"
                 android:text="Sign in with Google +"
                 android:layout_marginTop="20dp"
