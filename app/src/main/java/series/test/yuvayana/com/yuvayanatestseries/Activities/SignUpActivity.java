@@ -16,6 +16,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import series.test.yuvayana.com.yuvayanatestseries.R;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -23,6 +35,8 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText emailId,passwordId,conPasswordId;
     private TextInputLayout emailLayout,passLayout,confPassLayout;
     private Button registerButtonId;
+    private String userEmail,userPassword;
+    private static String signUpUrl = "http://test.yuvayana.org/wp-json/wp/v2/users/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +112,7 @@ public class SignUpActivity extends AppCompatActivity {
             requestFocus(emailId);
             return false;
         } else {
+            userEmail = email;
             emailLayout.setErrorEnabled(false);
         }
 
@@ -163,6 +178,7 @@ public class SignUpActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else {
+            userPassword = confPass;
             confPassLayout.setErrorEnabled(false);
         }
 
@@ -182,7 +198,54 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(SignUpActivity.this, "Thank You!", Toast.LENGTH_SHORT).show();
+        if (userEmail != "" && userPassword != "") {
+            //Toast.makeText(SignUpActivity.this,userEmail + "-----------" + userPassword,Toast.LENGTH_SHORT).show();
+            sendSignUpDataToServer();
+        }
+
+
+    }
+
+    /**** Method Add for Sending Data to the Server *****/
+    private void sendSignUpDataToServer() {
+
+        JsonArrayRequest signUpReq = new JsonArrayRequest(signUpUrl,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        JSONArray ashish = response;
+                        Toast.makeText(SignUpActivity.this,""+ashish,Toast.LENGTH_LONG).show();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(SignUpActivity.this,""+error,Toast.LENGTH_SHORT).show();
+            }
+
+        } ) {
+
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("username",userEmail);
+                params.put("email",userEmail);
+                params.put("password",userPassword);
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Authorization","Basic eXV2YXlhbmFAeWFob28uY29tOkJpbEBzcHVyIzMy");
+                return params;
+            }
+
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(SignUpActivity.this);
+        queue.add(signUpReq);
+
+
     }
 
     private class MyTextWatcher implements TextWatcher {
