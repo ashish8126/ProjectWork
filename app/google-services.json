@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1025904448463",
+    "project_id": "yuvayana-185017"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025904448463:android:315c131f7604c4df",
+        "android_client_info": {
+          "package_name": "series.test.yuvayana.com.yuvayanatestseries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025904448463-mcgr8b50smqq41ei7bkdktivujneba3a.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1025904448463-sqqbb7flbs2viooem0nj26teieln3vkn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "series.test.yuvayana.com.yuvayanatestseries",
+            "certificate_hash": "10c8ef06b4cd60c0e0fd3ac3053c87a88e8f29a8"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc_nJhcQiHmNUvN4xBVresKeXwnqtL_Jk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
