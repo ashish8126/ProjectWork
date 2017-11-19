@@ -20,16 +20,12 @@ import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.appevents.AppEventsLogger;
-import com.facebook.FacebookSdk;
-import com.facebook.login.Login;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -258,38 +254,41 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             handleResult(result);
         }
     }
+
+    class MyTextWatcher extends LoginActivity implements TextWatcher {
+
+        View myView;
+
+        MyTextWatcher(View v) {
+            this.myView = v;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            switch (myView.getId()) {
+                case R.id.input_userName:
+                    validateUserName();
+                    break;
+                case R.id.input_pass:
+                    validatePassword();
+                    break;
+            }
+        }
+    }
+
 }
 
-     class MyTextWatcher extends LoginActivity implements TextWatcher {
 
-         View myView;
-
-         MyTextWatcher(View v) {
-             this.myView = v;
-         }
-
-         @Override
-         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-         }
-
-         @Override
-         public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-         }
-
-         @Override
-         public void afterTextChanged(Editable s) {
-             switch (myView.getId()) {
-                 case R.id.input_userName:
-                     validateUserName();
-                     break;
-                 case R.id.input_pass:
-                     validatePassword();
-                     break;
-             }
-         }
-     }
 
 
 
